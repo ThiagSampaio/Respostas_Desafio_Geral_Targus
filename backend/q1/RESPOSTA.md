@@ -1,4 +1,16 @@
-# Backend - Q1
+# Resposta Backend - Q1 
+
+Bem vindo leitor. Neste documento você terá acesso a toda documentação e o passo a passo para realização dessa questão.
+
+# Tabela de conteúdo - Geral
+
+1. [ Questão pedida. ](#desc)
+2. [ Solução. ](#usage)
+
+---
+
+<a name="desc"></a>
+<h2> Backend - Q1 </h2>
 
 Valor: 1.5 pt
 
@@ -40,4 +52,13 @@ Dockerfile e colocar o projeto para funcionar.
 
 ---
 
-*sua resposta aqui*
+<a name="usage"></a>
+<h2>Solução</h2>
+
+<h3> 1- Rodando o arquivo passado </h3>
+
+Com o comando abaixo, montei o container para a análise. 
+
+```bash
+docker build -t analise:01 .
+```
