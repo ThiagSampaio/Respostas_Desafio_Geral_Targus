@@ -8,9 +8,10 @@ RUN bash docker-build.bash -t analise:04 .
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY src/ .
+COPY app/ .
 
 EXPOSE 8000
 
 
-CMD ["python", "app/app.py"]
+CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--reload"]
+

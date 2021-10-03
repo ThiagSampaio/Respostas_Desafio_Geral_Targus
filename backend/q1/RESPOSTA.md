@@ -60,7 +60,7 @@ Dockerfile e colocar o projeto para funcionar.
 Com o comando abaixo, montei o container para a análise. 
 
 ```bash
-docker build -t analise:01 .
+bash docker build -t analise:01 .
 ```
 <h4> 1.1 - 1° Análise: Tamanho da imagem </h4>
 Após montar o container com a imagem passada temos o primeiro dado: o tamanho do arquivo = 1.14GB
@@ -93,7 +93,7 @@ RESULTADO:
 
 Rodando o comando:
 ```bash
-docker build -t analise:02 .
+bash docker build -t analise:02 .
 ```
 
 Obtemos o primeiro passo:
@@ -225,3 +225,72 @@ Para
  ```Dockerfile
  CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--reload"]
  ```
+
+3- analisando o container: 
+
+Rodando o comando:
+```bash
+bash docker build -t analise:04 .
+```
+Temos a seguinte saída .json
+
+```json
+[
+  {
+    "time": 1633288787,
+    "step": 0,
+    "cmd": "START"
+  },
+  {
+    "time": 1633288787,
+    "step": -1,
+    "cmd": "END"
+  }
+]
+```
+E o seguinte status da aplicação rodando normalmente: 
+
+![Imagem da aplicação ](Imgs/b_q2.1.PNG)
+
+
+![Imagem da aplicação ](Imgs/b_q2.2.PNG)
+
+Resumo: 
+---
+Dockerfile ANTIGO:
+```Dockerfile
+FROM python:latest
+
+COPY app app
+
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+
+CMD ["python", "app/app.py"]
+
+````
+<br>
+Dockerfile NOVO:
+```Dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY docker-build.bash .
+RUN bash docker-build.bash -t analise:04 .
+
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+COPY app/ .
+
+EXPOSE 8000
+
+
+CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--reload"]
+
+````
+---
+FIM -> Para mais informações sobre cada etapa clique no link abaixo.
+
+https://github.com/ThiagSampaio/Respostas_Desafio_Geral_Targus
