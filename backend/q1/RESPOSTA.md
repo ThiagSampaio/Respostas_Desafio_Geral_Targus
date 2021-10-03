@@ -93,7 +93,7 @@ RESULTADO:
 
 Rodando o comando:
 ```bash
-docker build -t analise:01 .
+docker build -t analise:02 .
 ```
 
 Obtemos o primeiro passo:
@@ -109,7 +109,7 @@ A segunda mudança que pode ser feita é diminuir os pacotes do requirements.txt
 Vamos então diminuir esse arquivo:
 
 DE:
----
+
 aiohttp==3.7.4.post0; python_version >= "3.6"
 asgiref==3.4.1; python_version >= "3.6"
 async-timeout==3.0.1; python_full_version >= "3.5.3" and python_version >= "3.6"
@@ -131,17 +131,27 @@ starlette==0.14.2; python_version >= "3.6"
 typing-extensions==3.10.0.2; python_full_version >= "3.6.1" and python_version >= "3.6"
 uvicorn==0.15.0
 yarl==1.6.3; python_version >= "3.6"
----
+
 
 PARA:
----
+
 click==7.1.2
 fastapi==0.62.0
 h11==0.11.0
 pydantic==1.7.3
 starlette==0.13.6
 uvicorn==0.13.0
----
+
 
 ATENÇÃO: ESSE PASSO É OPCIONAL, COMO EU NÃO CONHEÇO AS INTENÇÕES INICIAIS DO PROJETO, TOMEI ESSA LIBERDADE APENAS PARA CHEGARMOS EM UM ARQUIVO MAIS LEVE. 
 
+RESULTADO:
+
+Rodando o comando:
+```bash
+docker build -t analise:03 .
+```
+Obtemos o resultado final
+![Imagem da segunda montagem ](Imgs/b_q1.3.PNG)
+
+OU seja de 348.79 MB para 184.42 MB.
