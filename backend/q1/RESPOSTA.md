@@ -74,22 +74,22 @@ Para reduzir o peso desta imagem , vamos primeiro mudar a versão do python util
 A primeira mudança será, como já relatado, na versão do python utilizado. 
 Para tal mudaremos a seguinte linha no Dockfile:
   
- DE:
+DE:
   
-  ```python
-  FROM python:latest
-  ```
+```python
+FROM python:latest
+```
   
-  PARA:
+PARA:
   
-  ```python
-  FROM python:3.9-slim
-  ```
+```python
+FROM python:3.9-slim
+```
   
-  Explicação : PYTHON:<VERSION>-SLIM
+Explicação : PYTHON:<VERSION>-SLIM
   
-  Esta imagem não contém os pacotes comuns contidos na tag padrão e contém apenas os pacotes mínimos necessários para executar o python. A menos que você esteja trabalhando    em um ambiente onde apenas a imagem Python será implantada e você tenha restrições de espaço, é altamente recomendável usar a imagem padrão deste repositório.
+Esta imagem não contém os pacotes comuns contidos na tag padrão e contém apenas os pacotes mínimos necessários para executar o python. A menos que você esteja trabalhando    em um ambiente onde apenas a imagem Python será implantada e você tenha restrições de espaço, é altamente recomendável usar a imagem padrão deste repositório.
   
-  RESULTADO: 
+RESULTADO: 
   
 
