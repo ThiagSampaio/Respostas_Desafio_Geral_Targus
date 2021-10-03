@@ -62,4 +62,34 @@ Com o comando abaixo, montei o container para a análise.
 ```bash
 docker build -t analise:01 .
 ```
+<h4> 1.1 - 1° Análise: Tamanho da imagem </h4>
+Após montar o container com a imagem passada temos o primeiro dado: o tamanho do arquivo = 1.14GB
+
+![Imagem da primeira montagem ](Imgs/b_q1.1.PNG)
+
+Para reduzir o peso desta imagem , vamos primeiro mudar a versão do python utilizado.
+
+<h5> 1.1.1 -> Primeira mudança do arquivo Dockefile.
+  
+A primeira mudança será, como já relatado, na versão do python utilizado. 
+Para tal mudaremos a seguinte linha no Dockfile:
+  
+ DE:
+  
+  ```python
+  FROM python:latest
+  ```
+  
+  PARA:
+  
+  ```python
+  FROM python:3.9-slim
+  ```
+  
+  Explicação : PYTHON:<VERSION>-SLIM
+  
+  Esta imagem não contém os pacotes comuns contidos na tag padrão e contém apenas os pacotes mínimos necessários para executar o python. A menos que você esteja trabalhando    em um ambiente onde apenas a imagem Python será implantada e você tenha restrições de espaço, é altamente recomendável usar a imagem padrão deste repositório.
+  
+  RESULTADO: 
+  
 
