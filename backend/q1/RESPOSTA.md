@@ -164,3 +164,64 @@ TAMANHO ORIGINAL: 1.14 GB
 <br>
 TAMANHO OTIMIZADO: 184.42 MB
 ---
+
+<h4> 1.2 - 2° Debug</h4>
+Agora vamos debugar a imagem passada. 
+
+Vamos mudar o Arquivo dockfile que apresenta alguns erros.
+
+1 - Setando o WORKDIR com a linha e adicionando:
+
+```Dockerfile
+WORKDIR /app
+````
+
+adicionando:
+```Dockerfile
+COPY docker-build.bash .
+RUN bash docker-build.bash -t analise:04 .
+````
+
+```Dockerfile
+COPY app/ .
+
+EXPOSE 8000
+````
+
+retirando:
+```Dockerfile
+COPY app app
+````
+2- Mudando alguns comandos.
+
+De
+ ```Dockerfile
+ COPY requirements.txt requirements.txt
+ ```
+
+Para
+ ```Dockerfile
+ COPY requirements.txt .
+ ```
+
+De
+ ```Dockerfile
+  RUN pip install -r requirements.txt
+ ```
+
+Para
+ ```Dockerfile
+ COPY requirements.txt .
+ `````
+
+2- Mudando CMD.
+
+De
+ ```Dockerfile
+  CMD ["python", "app/app.py"]
+ ```
+
+Para
+ ```Dockerfile
+ CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--reload"]
+ ```
