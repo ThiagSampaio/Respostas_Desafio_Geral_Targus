@@ -93,7 +93,7 @@ RESULTADO:
 
 Rodando o comando:
 ```bash
-docker build -t analise:01 .
+docker build -t analise:02 .
 ```
 
 Obtemos o primeiro passo:
@@ -145,3 +145,13 @@ uvicorn==0.13.0
 
 ATENÇÃO: ESSE PASSO É OPCIONAL, COMO EU NÃO CONHEÇO AS INTENÇÕES INICIAIS DO PROJETO, TOMEI ESSA LIBERDADE APENAS PARA CHEGARMOS EM UM ARQUIVO MAIS LEVE. 
 
+RESULTADO:
+
+Rodando o comando:
+```bash
+docker build -t analise:03 .
+```
+Obtemos o resultado final
+![Imagem da segunda montagem ](Imgs/b_q1.3.PNG)
+
+OU seja de 348.79 MB para 184.42 MB.
