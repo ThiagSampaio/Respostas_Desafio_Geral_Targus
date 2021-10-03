@@ -60,5 +60,5 @@ Dockerfile e colocar o projeto para funcionar.
 Com o comando abaixo, montei o container para a análise. 
 
 ```bash
-docker build -t analise:01
+docker build -t analise:01 .
 ```
