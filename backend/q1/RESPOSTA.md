@@ -55,10 +55,7 @@ Dockerfile e colocar o projeto para funcionar.
 <a name="usage"></a>
 <h2>Solução</h2>
 
-<<<<<<< backend-q1
-teste
-=======
-<h3> 1- Rodando o arquivo passado </h3>
+
 
 Com o comando abaixo, montei o container para a análise. 
 
@@ -66,4 +63,3 @@ Com o comando abaixo, montei o container para a análise.
 docker build -t analise:01 .
 ```
 
-teste
