@@ -55,10 +55,11 @@ Dockerfile e colocar o projeto para funcionar.
 <a name="usage"></a>
 <h2>Solução</h2>
 
-<h3> 1- Rodando o arquivo passado </h3>
+
 
 Com o comando abaixo, montei o container para a análise. 
 
 ```bash
 docker build -t analise:01 .
 ```
+
