@@ -69,7 +69,7 @@ Após montar o container com a imagem passada temos o primeiro dado: o tamanho d
 
 Para reduzir o peso desta imagem , vamos primeiro mudar a versão do python utilizado.
 
-<h5> 1.1.1 -> Primeira mudança do arquivo Dockefile.
+<h5> 1.1.1 -> Primeira mudança do arquivo Dockefile. </h5>
   
 A primeira mudança será, como já relatado, na versão do python utilizado. 
 Para tal mudaremos a seguinte linha no Dockfile:
@@ -100,4 +100,48 @@ Obtemos o primeiro passo:
 
 ![Imagem da segunda montagem ](Imgs/b_q1.2.PNG)
 
-OU seja
+OU seja de 1.14 GB para 348.79 MB.
+
+<h5> 1.1.2 -> Segunda mudança do arquivo Dockefile.(OPCIONAL) </h5>
+
+A segunda mudança que pode ser feita é diminuir os pacotes do requirements.txt. Se observamos o arquivo main.py vemos que o requirements.txt está com pacotes não usados nessa aplicação especifica.
+
+Vamos então diminuir esse arquivo:
+
+DE:
+---
+aiohttp==3.7.4.post0; python_version >= "3.6"
+asgiref==3.4.1; python_version >= "3.6"
+async-timeout==3.0.1; python_full_version >= "3.5.3" and python_version >= "3.6"
+attrs==21.2.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
+chardet==4.0.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
+click==8.0.1; python_version >= "3.6"
+colorama==0.4.4; python_version >= "3.6" and python_full_version < "3.0.0" and platform_system == "Windows" or platform_system == "Windows" and python_version >= "3.6" and python_full_version >= "3.5.0"
+fastapi==0.68.1; python_version >= "3.6"
+h11==0.12.0; python_version >= "3.6"
+idna==3.2; python_version >= "3.6"
+multidict==5.1.0; python_version >= "3.6"
+numpy==1.21.1; python_version >= "3.7" and python_full_version >= "3.7.1"
+pandas==1.3.3; python_full_version >= "3.7.1"
+pydantic==1.8.2; python_full_version >= "3.6.1" and python_version >= "3.6"
+python-dateutil==2.8.2; python_full_version >= "3.7.1"
+pytz==2021.1; python_full_version >= "3.7.1"
+six==1.16.0; python_full_version >= "3.7.1"
+starlette==0.14.2; python_version >= "3.6"
+typing-extensions==3.10.0.2; python_full_version >= "3.6.1" and python_version >= "3.6"
+uvicorn==0.15.0
+yarl==1.6.3; python_version >= "3.6"
+---
+
+PARA:
+---
+click==7.1.2
+fastapi==0.62.0
+h11==0.11.0
+pydantic==1.7.3
+starlette==0.13.6
+uvicorn==0.13.0
+---
+
+ATENÇÃO: ESSE PASSO É OPCIONAL, COMO EU NÃO CONHEÇO AS INTENÇÕES INICIAIS DO PROJETO, TOMEI ESSA LIBERDADE APENAS PARA CHEGARMOS EM UM ARQUIVO MAIS LEVE. 
+
