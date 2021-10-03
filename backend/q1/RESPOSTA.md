@@ -55,6 +55,14 @@ Dockerfile e colocar o projeto para funcionar.
 <a name="usage"></a>
 <h2>Solução</h2>
 
+<h3> Tabela de Solução</h3>
+
+1. [ Análise da imagem passada. ](#1)
+2. [ Solução da diminuição da imagem. ](#2)
+3. [ Debug. ](#3)
+3. [ Solução Final do Debug. ](#4)
+
+<a name="1"></a>
 <h3> 1- Análise da imagem passada </h3>
 
 Com o comando abaixo, montei o container para a análise. 
@@ -158,13 +166,14 @@ Obtemos o resultado final
 
 OU seja de 348.79 MB para 184.42 MB.
 
+<a name="2"></a>
 FIM DA PRIMEIRA PARTE
 ---
 TAMANHO ORIGINAL: 1.14 GB
 <br>
 TAMANHO OTIMIZADO: 184.42 MB
 ---
-
+<a name="3"></a>
 <h4> 1.2 - 2° Debug</h4>
 Agora vamos debugar a imagem passada. 
 
@@ -255,6 +264,7 @@ E o seguinte status da aplicação rodando normalmente:
 
 ![Imagem da aplicação ](Imgs/b_q2.2.PNG)
 
+<a name="4"></a>
 Resumo: 
 ---
 Dockerfile ANTIGO:
