@@ -270,7 +270,9 @@ CMD ["python", "app/app.py"]
 
 ````
 <br>
+  
 Dockerfile NOVO:
+  
 ```Dockerfile
 FROM python:3.9-slim
 
@@ -286,11 +288,10 @@ COPY app/ .
 
 EXPOSE 8000
 
-
 CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--reload"]
-
-````
+```
+  
 ---
 FIM -> Para mais informações sobre cada etapa clique no link abaixo.
-
-https://github.com/ThiagSampaio/Respostas_Desafio_Geral_Targus
+https://github.com/ThiagSampaio/Respostas_Desafio_Geral_Targus/projects/1
+---
