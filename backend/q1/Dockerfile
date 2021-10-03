@@ -1,8 +1,16 @@
 FROM python:3.9-slim
 
-COPY app app
+WORKDIR /app
 
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+COPY docker-build.bash .
+RUN bash docker-build.bash -t analise:04 .
+
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+COPY src/ .
+
+EXPOSE 8000
+
 
 CMD ["python", "app/app.py"]
