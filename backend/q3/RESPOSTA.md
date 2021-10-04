@@ -39,7 +39,7 @@ Deixe todos os arquivos do projeto neste diretório.
 <h3> Tabela de Solução</h3>
 
 1. [ Criação de um ambiente local para o desenvolvimento (Opcional). ](#1)
-2. [ Solução da diminuição da imagem. ](#2)
+2. [ Instalação dos arquivos necessários. ](#2)
 3. [ Debug. ](#3)
 3. [ Solução Final do Debug. ](#4)
 
@@ -65,11 +65,25 @@ python -m venv nome-ambiente
 
 Pronto, o ambiente foi criado.
 
-Para ativar esse ambiente basta, ir pelo comando `cd` na pasta do ambiente após ir na pasta Scripts  rodar o seguinte comando.
+Para ativar esse ambiente basta, ir pelo comando `cd` na pasta do ambiente. Após isso, ir na pasta Scripts  rodar o seguinte comando.
 
 ```powershell
  .\Activate.ps1
 ```
-Abaixo a imagem do ambiente rodando localmente
+Abaixo, a imagem do ambiente rodando localmente:
 
 ![Imagem da segunda montagem ](imgs/Q3.2.PNG)
+
+<a name="2"></a>
+<h3> 2- Instalação dos arquivos necessários.</h3>
+
+Vamos instalar as seguintes bibliotecas, rodando os comando abaixo:
+
+```powershell
+pip install fastapi
+```
+
+```powershell
+pip install uvicorn
+```
+
