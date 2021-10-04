@@ -42,6 +42,7 @@ Deixe todos os arquivos do projeto neste diretório.
 2. [ Instalação dos arquivos necessários. ](#2)
 3. [ Criação de template básico para aplicação FASTAPI. ](#3)
 4. [ Criação da aplicação rodando no container(PRIMEIRA RESPOSTA). ](#4)
+5. [ Resposta da primeira parte da questão. ](#5)
 
 
 <a name="1"></a>
@@ -110,7 +111,9 @@ if __name__ == "__main__":
 Rodando o arquivo, podemos ver que temos uma aplicação base rodando. Abaixo, o print da aplicação rodando NA SUA FORMA BÁSICA.
 
 ![Imagem da terceira montagem ](imgs/Q3.3.PNG)
+
 <br>
+
 ![Imagem da Quarta montagem ](imgs/Q3.4.PNG)
 
 <a name="4"></a>
@@ -137,4 +140,27 @@ EXPOSE 8000
 CMD ["uvicorn", "src.main:app", "--host=0.0.0.0", "--reload"]
 ````
 
+Para buildar, utilizamos na pasta da questão o seguinte comando no powershell:
 
+```powershell
+docker build -t q3:0.1 .
+```
+Demos o nome de q3 na versão 0.1
+
+Após buildar vamos rodar nosso container, dando o nome de q3, com a porta 8000 com o seguinte comando:
+
+```powershell
+docker run -p 8000:8000 --name q3 q3:0.1
+```
+Fazendo todos os passos acima, temos nossa primeira resposta:
+
+<a name="5"></a>
+Resposta da primeira parte da questão, imagens:
+---
+![Imagem da Quinta montagem ](imgs/Q3.5.PNG)
+
+![Imagem da Sexta montagem ](imgs/Q3.6.PNG)
+
+![Imagem da Sétima montagem ](imgs/Q3.7.PNG)
+
+---
