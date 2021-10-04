@@ -55,7 +55,7 @@ ATENÇÃO: Esse passo está sendo mostrado no intuido de trazer ao leitor todos 
 
 Com o python instalado, utilazando o powershell(windows) vamos até a pasta criada para o projeto , utilizando o comando `cd`. Abaixo o print dos comandos:
 
-![Imagem da primeira montagem ](Imgs/Q3.1.PNG)
+![Imagem da primeira montagem ](imgs/Q3.1.PNG)
 
 Após isso, digitamos o comando:
 
@@ -66,6 +66,10 @@ python -m venv nome-ambiente
 Pronto, o ambiente foi criado.
 
 Para ativar esse ambiente basta, ir pelo comando `cd` na pasta do ambiente após ir na pasta Scripts  rodar o seguinte comando.
+
 ```powershell
  .\Activate.ps1
 ```
+Abaixo a imagem do ambiente rodando localmente
+
+![Imagem da segunda montagem ](imgs/Q3.2.PNG)
