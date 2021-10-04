@@ -77,7 +77,7 @@ Abaixo, a imagem do ambiente rodando localmente:
 <a name="2"></a>
 <h3> 2- Instalação dos arquivos necessários.</h3>
 
-Vamos instalar as seguintes bibliotecas, rodando os comando abaixo:
+Vamos instalar as seguintes bibliotecas, rodando os comando abaixo no terminal:
 
 ```powershell
 pip install fastapi
@@ -87,3 +87,28 @@ pip install fastapi
 pip install uvicorn
 ```
 
+<a name="3"></a>
+<h3> 3- Criação de template básico para aplicação FASTAPI.</h3>
+
+Primeiro vamos criar um arquivo `main.py` que será a base da nossa aplição.
+Temos então, INICIALMENTE, o seguinte script:
+
+```python
+import uvicorn
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def index():
+    return {"message": "hello world"}
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", port=8000, reload=True)
+```
+
+Rodando o arquivo, podemos ver que temos uma aplicação base rodando. Abaixo, o print da aplicação rodando NA SUA FORMA BÁSICA.
+
+![Imagem da terceira montagem ](imgs/Q3.3.PNG)
+<br>
+![Imagem da Quarta montagem ](imgs/Q3.4.PNG)
