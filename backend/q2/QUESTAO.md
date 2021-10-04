@@ -8,4 +8,4 @@ Use o script de exemplo fornecido para construir a imagem. Utilizando as boas pr
 docker run --rm -it minha-imagem:1.0 hello.go
 ```
 
-Deixe seu Dockerfile neste diretório.
+Deixe seu Dockerfile neste diretório..
