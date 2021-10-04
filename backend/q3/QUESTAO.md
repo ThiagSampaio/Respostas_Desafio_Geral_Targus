@@ -1,4 +1,16 @@
-# Backend - Q3
+# Resposta Backend - Q3
+
+Bem vindo leitor. Neste documento você terá acesso a toda documentação e o passo a passo para realização dessa questão.
+
+# Tabela de conteúdo - Geral
+
+1. [ Questão pedida. ](#desc)
+2. [ Solução. ](#usage)
+
+---
+
+<a name="desc"></a>
+<h2> Backend - Q3 </h2>
 
 Esta questão possui múltiplos objetivos. Leia todos para planejar sua rota de trabalho.
 
@@ -18,3 +30,19 @@ Extra:
 - Crie uma network para a API e um novo container para atuar como "ponte". O host deverá apenas (E SOMENTE) conseguir se comunicar com a ponte e nunca com a API diretamente (1 pt).
 
 Deixe todos os arquivos do projeto neste diretório.
+
+---
+
+<a name="usage"></a>
+<h2>Solução</h2>
+
+<h3> Tabela de Solução</h3>
+
+1. [ Criação da aplicação FASTAPI em um container. ](#1)
+2. [ Solução da diminuição da imagem. ](#2)
+3. [ Debug. ](#3)
+3. [ Solução Final do Debug. ](#4)
+
+
+<a name="1"></a>
+<h3> 1- Criação da aplicação FASTAPI em um container </h3>
