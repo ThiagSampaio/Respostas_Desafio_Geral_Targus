@@ -163,4 +163,15 @@ Resposta da primeira parte da questão, imagens:
 
 ![Imagem da Sétima montagem ](imgs/Q3.7.PNG)
 
+A arquitetura de arquivos segue o seguinte desenho inicial
+Dockerfile.py -> imagem docker
+requirements.txt ->  pacotes usados
+RESPOSTA.md
+src/
+--main.py -> arquivo da aplicação
+
 ---
+
+<h3> 5- Melhora da aplicação com log.</h3>
+
+Primeiro criamos no mesmo diretorio o arquivo `logging.conf`.O arquivo configura os loggers.
