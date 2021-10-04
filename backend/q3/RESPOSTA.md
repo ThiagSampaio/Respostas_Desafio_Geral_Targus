@@ -39,7 +39,7 @@ Deixe todos os arquivos do projeto neste diretório.
 <h3> Tabela de Solução</h3>
 
 1. [ Criação de um ambiente local para o desenvolvimento (Opcional). ](#1)
-2. [ Solução da diminuição da imagem. ](#2)
+2. [ Instalação dos arquivos necessários. ](#2)
 3. [ Debug. ](#3)
 3. [ Solução Final do Debug. ](#4)
 
@@ -65,11 +65,50 @@ python -m venv nome-ambiente
 
 Pronto, o ambiente foi criado.
 
-Para ativar esse ambiente basta, ir pelo comando `cd` na pasta do ambiente após ir na pasta Scripts  rodar o seguinte comando.
+Para ativar esse ambiente basta, ir pelo comando `cd` na pasta do ambiente. Após isso, ir na pasta Scripts  rodar o seguinte comando.
 
 ```powershell
  .\Activate.ps1
 ```
-Abaixo a imagem do ambiente rodando localmente
+Abaixo, a imagem do ambiente rodando localmente:
 
 ![Imagem da segunda montagem ](imgs/Q3.2.PNG)
+
+<a name="2"></a>
+<h3> 2- Instalação dos arquivos necessários.</h3>
+
+Vamos instalar as seguintes bibliotecas, rodando os comando abaixo no terminal:
+
+```powershell
+pip install fastapi
+```
+
+```powershell
+pip install uvicorn
+```
+
+<a name="3"></a>
+<h3> 3- Criação de template básico para aplicação FASTAPI.</h3>
+
+Primeiro vamos criar um arquivo `main.py` que será a base da nossa aplição.
+Temos então, INICIALMENTE, o seguinte script:
+
+```python
+import uvicorn
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def index():
+    return {"message": "hello world"}
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", port=8000, reload=True)
+```
+
+Rodando o arquivo, podemos ver que temos uma aplicação base rodando. Abaixo, o print da aplicação rodando NA SUA FORMA BÁSICA.
+
+![Imagem da terceira montagem ](imgs/Q3.3.PNG)
+<br>
+![Imagem da Quarta montagem ](imgs/Q3.4.PNG)
