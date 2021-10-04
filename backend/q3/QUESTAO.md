@@ -38,11 +38,34 @@ Deixe todos os arquivos do projeto neste diretório.
 
 <h3> Tabela de Solução</h3>
 
-1. [ Criação da aplicação FASTAPI em um container. ](#1)
+1. [ Criação de um ambiente local para o desenvolvimento (Opcional). ](#1)
 2. [ Solução da diminuição da imagem. ](#2)
 3. [ Debug. ](#3)
 3. [ Solução Final do Debug. ](#4)
 
 
 <a name="1"></a>
-<h3> 1- Criação da aplicação FASTAPI em um container </h3>
+<h3> 1- Criação de um ambiente local para o desenvolvimento (Opcional) </h3>
+
+É recomendável a criação de um ambiente local para o desenvolvimento, pois neste ambiente terá apenas as bibliotecas utilizadas na aplicação.
+
+ATENÇÃO: Esse passo está sendo mostrado no intuido de trazer ao leitor todos os passos do desenvolvimento. Fica a cargo do programador faze-lo ou não
+
+<h4>1.1 - Criação do ambiente local utilizando "venv" e seus comandos </h4>
+
+Com o python instalado, utilazando o powershell(windows) vamos até a pasta criada para o projeto , utilizando o comando `cd`. Abaixo o print dos comandos:
+
+![Imagem da primeira montagem ](Imgs/Q3.1.PNG)
+
+Após isso, digitamos o comando:
+
+```powershell
+python -m venv nome-ambiente
+```
+
+Pronto, o ambiente foi criado.
+
+Para ativar esse ambiente basta, ir pelo comando `cd` na pasta do ambiente após ir na pasta Scripts  rodar o seguinte comando.
+```powershell
+ .\Activate.ps1
+```
