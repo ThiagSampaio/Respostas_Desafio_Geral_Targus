@@ -60,7 +60,7 @@ Dockerfile e colocar o projeto para funcionar.
 1. [ Análise da imagem passada. ](#1)
 2. [ Solução da diminuição da imagem. ](#2)
 3. [ Debug. ](#3)
-3. [ Solução Final do Debug. ](#4)
+4. [ Solução Final do Debug. ](#4)
 
 <a name="1"></a>
 <h3> 1- Análise da imagem passada </h3>

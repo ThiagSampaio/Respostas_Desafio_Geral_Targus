@@ -40,8 +40,8 @@ Deixe todos os arquivos do projeto neste diretório.
 
 1. [ Criação de um ambiente local para o desenvolvimento (Opcional). ](#1)
 2. [ Instalação dos arquivos necessários. ](#2)
-3. [ Debug. ](#3)
-3. [ Solução Final do Debug. ](#4)
+3. [ Criação de template básico para aplicação FASTAPI. ](#3)
+4. [ Criação da aplicação rodando no container(PRIMEIRA RESPOSTA). ](#4)
 
 
 <a name="1"></a>
@@ -112,3 +112,29 @@ Rodando o arquivo, podemos ver que temos uma aplicação base rodando. Abaixo, o
 ![Imagem da terceira montagem ](imgs/Q3.3.PNG)
 <br>
 ![Imagem da Quarta montagem ](imgs/Q3.4.PNG)
+
+<a name="4"></a>
+<h3> 4- Criação da aplicação rodando no container(PRIMEIRA RESPOSTA).</h3>
+
+Primeiro criaremos uma pasta `src` onde estará nosso arquivo básico `main.py`
+
+Logo após, criaremos um arquivo `requirements.txt` que dirá ao nosso container quais arquivos devem ser instalados. 
+
+Criaremos nosso arquivo `Dockerfile`. 
+
+```Dockerfile
+FROM python:3.9-slim
+
+COPY ./src /app/src
+COPY ./requirements.txt /app
+
+WORKDIR /app
+
+RUN pip3 install -r requirements.txt
+
+EXPOSE 8000
+
+CMD ["uvicorn", "src.main:app", "--host=0.0.0.0", "--reload"]
+````
+
+
