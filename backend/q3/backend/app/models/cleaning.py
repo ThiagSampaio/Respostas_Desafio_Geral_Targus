@@ -12,17 +12,15 @@ class CleaningType(str, Enum):
 
 
 class CleaningBase(CoreModel):
-    """
-    All common characteristics of our Cleaning resource
-    """
+  
     data: str = str(datetime.datetime.now().date())
-    hora: str = datetime.datetime.now().hour
+    hora: str = str(datetime.datetime.now().hour)
     cleaning_type: Optional[CleaningType] = "spot_clean"
 
 
 class CleaningCreate(CleaningBase):
     data:  str = str(datetime.datetime.now().date())
-    hora: str
+    hora:  str = str(datetime.datetime.now().hour)
 
 
 class CleaningUpdate(CleaningBase):
@@ -31,7 +29,7 @@ class CleaningUpdate(CleaningBase):
 
 class CleaningInDB(IDModelMixin, CleaningBase):
     data:  str = str(datetime.datetime.now().date())
-    hora: str
+    hora:  str = str(datetime.datetime.now().hour)
     cleaning_type: CleaningType
 
 
