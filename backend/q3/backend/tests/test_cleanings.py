@@ -1,16 +1,10 @@
 import pytest
-
 from httpx import AsyncClient
 from fastapi import FastAPI
 from typing import List, Union
-
-
 from starlette.status import HTTP_201_CREATED, HTTP_404_NOT_FOUND, HTTP_422_UNPROCESSABLE_ENTITY
-
-
 from app.models.cleaning import CleaningCreate  
 
-# decorate all tests with @pytest.mark.asyncio
 pytestmark = pytest.mark.asyncio  
 
 
@@ -72,8 +66,8 @@ from starlette.status import (
 from app.models.cleaning import CleaningCreate, CleaningInDB 
 
 class TestGetCleaning:
-    async def test_get_cleaning_by_id(self, app: FastAPI, client: AsyncClient, test_cleaning: CleaningInDB) -> None:
-        res = await client.get(app.url_path_for("cleanings:get-cleaning-by-id", id=test_cleaning.id))
+    async def test_get_cleaning_by_data(self, app: FastAPI, client: AsyncClient, test_cleaning: CleaningInDB) -> None:
+        res = await client.get(app.url_path_for("cleanings:get-cleaning-by-data", data=test_cleaning.data))
         assert res.status_code == HTTP_200_OK
         cleaning = CleaningInDB(**res.json())
         assert cleaning == test_cleaning
@@ -86,10 +80,10 @@ class TestGetCleaning:
             (None, 422),
         ),
     )
-    async def test_wrong_id_returns_error(
-        self, app: FastAPI, client: AsyncClient, id: int, status_code: int
+    async def test_wrong_data_returns_error(
+        self, app: FastAPI, client: AsyncClient, data: str, status_code: int
     ) -> None:
-        res = await client.get(app.url_path_for("cleanings:get-cleaning-by-id", id=id))
+        res = await client.get(app.url_path_for("cleanings:get-cleaning-by-data", data=data))
         assert res.status_code == status_code
 
     async def test_get_all_cleanings_returns_valid_response(
@@ -134,14 +128,14 @@ class TestUpdateCleaning:
         }
         res = await client.put(
             app.url_path_for(
-                "cleanings:update-cleaning-by-id",
-                id=test_cleaning.id,
+                "cleanings:update-cleaning-by-data",
+                id=test_cleaning.data,
             ),
             json=cleaning_update
         )
         assert res.status_code == HTTP_200_OK
         updated_cleaning = CleaningInDB(**res.json())
-        assert updated_cleaning.id == test_cleaning.id  # make sure it's the same cleaning
+        assert updated_cleaning.data == test_cleaning.data  # make sure it's the same cleaning
         # make sure that any attribute we updated has changed to the correct value
         for i in range(len(attrs_to_change)):
             attr_to_change = getattr(updated_cleaning, attrs_to_change[i])
@@ -166,13 +160,13 @@ class TestUpdateCleaning:
         self,
         app: FastAPI,
         client: AsyncClient,
-        id: int,
+        data: str,
         payload: dict,
         status_code: int,
     ) -> None:
         cleaning_update = {"cleaning_update": payload}
         res = await client.put(
-            app.url_path_for("cleanings:update-cleaning-by-id", id=id),
+            app.url_path_for("cleanings:update-cleaning-by-data", data=data),
             json=cleaning_update
         )
         assert res.status_code == status_code
@@ -187,16 +181,16 @@ class TestDeleteCleaning:
         # delete the cleaning
         res = await client.delete(
             app.url_path_for(
-                "cleanings:delete-cleaning-by-id", 
-                id=test_cleaning.id,
+                "cleanings:delete-cleaning-by-data", 
+                data=test_cleaning.data,
             ),
         )
         assert res.status_code == HTTP_200_OK
         # ensure that the cleaning no longer exists
         res = await client.get(
             app.url_path_for(
-                "cleanings:get-cleaning-by-id", 
-                id=test_cleaning.id,
+                "cleanings:get-cleaning-by-data", 
+                data=test_cleaning.data,
             ),
         )
         assert res.status_code == HTTP_404_NOT_FOUND
@@ -214,10 +208,10 @@ class TestDeleteCleaning:
         app: FastAPI,
         client: AsyncClient,
         test_cleaning: CleaningInDB,
-        id: int,
+        data: str,
         status_code: int,
     ) -> None:
         res = await client.delete(
-            app.url_path_for("cleanings:delete-cleaning-by-id", id=id),
+            app.url_path_for("cleanings:delete-cleaning-by-data", data=data),
         )
         assert res.status_code == status_code

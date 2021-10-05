@@ -4,7 +4,7 @@ from starlette.datastructures import Secret
 
 config = Config(".env")
 
-PROJECT_NAME = "phresh"
+PROJECT_NAME = "Targus_q3"
 VERSION = "1.0.0"
 API_PREFIX = "/api"
 

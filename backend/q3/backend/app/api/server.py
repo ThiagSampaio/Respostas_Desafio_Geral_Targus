@@ -1,8 +1,16 @@
+'''
+Explicação do Arquivo:
+
+Temos uma função de fábrica que retorna um aplicativo FastAPI com middleware cors configurado. 
+Importamos este middleware do pacote starlette. 
+
+Ultima atualização:05/10/2021 - Thiago Sampaio
+'''
+
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 from app.core import config, tasks  
-
 from app.api.routes import router as api_router
 
 

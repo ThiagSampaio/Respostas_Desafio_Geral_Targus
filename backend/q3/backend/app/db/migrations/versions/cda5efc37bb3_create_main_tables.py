@@ -1,8 +1,8 @@
 """create_main_tables
 
-Revision ID: 727a78bea4e2
+Revision ID: cda5efc37bb3
 Revises: 
-Create Date: 2021-10-05 17:33:30.181942
+Create Date: 2021-10-05 21:59:00.638320
 
 """
 from alembic import op
@@ -10,10 +10,11 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic
-revision = '727a78bea4e2'
+revision = 'cda5efc37bb3'
 down_revision = None
 branch_labels = None
 depends_on = None
+
 
 def create_cleanings_table() -> None:
     op.create_table(
