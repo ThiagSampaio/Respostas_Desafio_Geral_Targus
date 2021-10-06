@@ -9,3 +9,16 @@ docker run --rm -it minha-imagem:1.0 hello.go
 ```
 
 Deixe seu Dockerfile neste diretório..
+
+Resposta
+---
+Buildar:
+```
+docker build -t minha-imagem:1.0 .
+```
+
+Rodar:
+```
+docker run --rm -it minha-imagem:1.0 hello.go
+```
+---
