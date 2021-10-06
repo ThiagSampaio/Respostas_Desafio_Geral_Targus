@@ -1,0 +1,5 @@
+flask
+requests
+pydantic
+flask_pydantic
+psycopg2.binary==2.8.5
