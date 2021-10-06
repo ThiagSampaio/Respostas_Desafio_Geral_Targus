@@ -2,7 +2,6 @@ import json
 import requests
 import pickle
 import sys
-import os
 from datetime import datetime, timedelta
 
 # ###Bloco 1 - Criação de datas### #
@@ -145,5 +144,3 @@ def carregamento2_serie_dias():
     except FileNotFoundError:
         print('Está faltando o arquivo SerieDias.json')
         sys.exit(-1)
-
-# ###Bloco5 - Transformacao de json para df ### #
