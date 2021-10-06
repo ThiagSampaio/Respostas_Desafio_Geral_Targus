@@ -17,5 +17,6 @@ listas_estacoes_df = pd.DataFrame.from_dict(
 serie_dias_df = pd.DataFrame.from_dict(
     serie_dias_json, orient='columns')
 
+# Printa somente as 5 primeiras linhas
 print(listas_estacoes_df.head())
 print(serie_dias_df.head())

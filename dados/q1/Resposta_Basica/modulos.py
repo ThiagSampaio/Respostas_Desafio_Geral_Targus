@@ -16,6 +16,11 @@ def datas_requisisao(delta=14):
            Delta Default de 14 dias, como pedido na requisição do programa. 
 
     Output: Data de hoje e Data passada (-14 dias)
+
+    OBSERVAÇÃO: foi visto que chegando a dias mais atuais as estação nao subiram seus dados climaticos. 
+    Então se você observar, decidi não usar essa função na url_requisições(), ao invés coloquei as datas manualmente. 
+    Porém a função funciona normalmente, basta descomentar 
+    a 4° linha da função url_requisição 
     '''
 
     data_hoje = datetime.today()
@@ -31,7 +36,7 @@ def datas_requisisao(delta=14):
 # ###Bloco2 - Criação das URL´S### #
 
 
-def url_requisicoes(tipo_estacao='T', codigo_estacao='A301'):
+def url_requisicoes(tipo_estacao='T', codigo_estacao='A756'):
     '''
     Função para a 'fabricação' da requisição da API do INMET. 
     Ver documentação em: https://portal.inmet.gov.br/manual/manual-de-uso-da-api-esta%C3%A7%C3%B5es
@@ -41,12 +46,20 @@ def url_requisicoes(tipo_estacao='T', codigo_estacao='A301'):
 
     Output: Duas URL montadas para a requisição via API
 
+    LER OBSERVAÇÃO da primeira função
     '''
 
     url_estacoes = f'https://apitempo.inmet.gov.br/estacoes/{tipo_estacao}'
-    url_estacoes_dadosHorarios = f'https://apitempo.inmet.gov.br/estacao/{datas_requisisao()[0]}/{datas_requisisao()[1]}/{codigo_estacao}'
+    url_estacoes_dadosdiarios = f'https://apitempo.inmet.gov.br/estacao/diaria/{datas_requisisao()[0]}/{datas_requisisao()[1]}/{codigo_estacao}'
 
-    return url_estacoes, url_estacoes_dadosHorarios
+    # LEIA A OBSERVAÇÃO DA PRIMIRA FUNÇÃO
+    #url_estacoes_dadosdiarios = f'https://apitempo.inmet.gov.br/estacao/diaria/{datas_requisisao()[0]}/{datas_requisisao()[1]}/{codigo_estacao}'
+    data1 = "2019-07-01"
+    data2 = "2019-07-14"
+
+    url_estacoes_dadosdiarios = f'https://apitempo.inmet.gov.br/estacao/diaria/{data1}/{data2}/{codigo_estacao}'
+
+    return url_estacoes, url_estacoes_dadosdiarios
 
 
 # ###Bloco3 - Requisições ### #
