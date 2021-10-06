@@ -60,7 +60,7 @@ def requisicao_lista_estacao():
         lista_estacoes = requests.get(url_requisicoes()[0])
         lista_estacoes_json = lista_estacoes.json()
         lista_estacoes.raise_for_status()
-        with open('Resposta_Basica/json/ListaEstacoes.json', 'wb') as dj:
+        with open('json/ListaEstacoes.json', 'wb') as dj:
             pickle.dump(lista_estacoes_json, dj)
         print("Requisição Lista de estações finalizado com Sucesso!")
 
@@ -82,7 +82,7 @@ def requisicao_serie_dias():
     try:
         serie_dias = requests.get(url_requisicoes()[1])
         serie_dias.raise_for_status()
-        with open('Resposta_Basica/json/SerieDias.json', 'wb') as dj:
+        with open('json/SerieDias.json', 'wb') as dj:
             pickle.dump(serie_dias.json(), dj)
         print("Requisicção serie dias finalizado com Sucesso!")
 
@@ -109,7 +109,7 @@ def carregamento1_listaestacoes():
     '''
 
     try:
-        with open('Resposta_Basica/json/ListaEstacoes.json', 'rb') as fp:
+        with open('json/ListaEstacoes.json', 'rb') as fp:
             listas_estacoes = pickle.load(fp)
             return listas_estacoes
     except FileNotFoundError:
@@ -126,7 +126,7 @@ def carregamento2_serie_dias():
     '''
 
     try:
-        with open('Resposta_Basica/json/SerieDias.json', 'rb') as fp:
+        with open('json/SerieDias.json', 'rb') as fp:
             serie_dias = pickle.load(fp)
             return serie_dias
     except FileNotFoundError:
