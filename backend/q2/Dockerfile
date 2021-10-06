@@ -1,9 +1,5 @@
-FROM golang:latest
+FROM golang:alpine
 
-COPY hello.go .
+COPY . .
 
-RUN go build hello.go
-
-EXPOSE 8080
-
-CMD ["./hello"]
+ENTRYPOINT ["go", "run"]
