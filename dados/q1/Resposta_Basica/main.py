@@ -10,7 +10,6 @@ requisicao_serie_dias()
 listas_estacoes_json = carregamento1_listaestacoes()
 serie_dias_json = carregamento2_serie_dias()
 
-
 listas_estacoes_df = pd.DataFrame.from_dict(
     listas_estacoes_json, orient='columns')
 

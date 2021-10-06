@@ -36,4 +36,21 @@ Extras:
 <a name="usage"></a>
 <h2>Solução</h2>
 ---
+Para esta solução , separei o projeto em dois diretórios:
+
+- Reposta_Basica
+- Resposta_Completa
+
+Na pasta `Resposta_Basica` o leitor encontra a resposta desta questão sem os extras implementados.
+Na pasta `Resposta_Completa` o  leitor encontra a resposta com todos pontos implementados. 
+
+<h3>Resposta_Basica</h3>
+Neste diretório o leitor encontrará a resposta desenvolvida de duas formas: um script python(main.py) OU um notebook. Os dois representam o mesmo funcionamento.
+Para rodar o script main.py instale as bibliotecas do requirements.txt. Abra o terminal e vá até a pasta do projeto. Digite no terminal:
+''' 
+python main.py
+'''
+O script rodará conforme o esperado. O leitor também tem a opção de ver a questão desenvolvida no jupyter. Basta abrir o arquivo e ler. 
+Todas as funções então bem explicadas, leia as `docstrings` com atenção. Lembrar que o script main.py interage com o script modulos.py
+
 
