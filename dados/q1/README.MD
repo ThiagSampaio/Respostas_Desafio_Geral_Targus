@@ -53,4 +53,5 @@ python main.py
 O script rodará conforme o esperado. O leitor também tem a opção de ver a questão desenvolvida no jupyter. Basta abrir o arquivo e ler. 
 Todas as funções então bem explicadas, leia as `docstrings` com atenção. Lembrar que o script main.py interage com o script modulos.py
 
+Obs: O leitor pode apagar os aquivos na pasta /Resposta_Basica/json que não haverá problema. 
 
