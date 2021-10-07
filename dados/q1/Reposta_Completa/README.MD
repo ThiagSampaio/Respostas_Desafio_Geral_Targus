@@ -22,13 +22,3 @@ Resposta:
 Resposta:
 
 - Solução no Notebook
-
-
-<h2>Extras3:<h2>
-
-- gere um gráfico de alguma variável contendo séries de duas estações (1 pt).
-  - Nota: use matplotlib, plotly, altair ou qualquer outra biblioteca que você conheça (1 pt).
-
-Resposta:
-
-- Solução no Notebook
