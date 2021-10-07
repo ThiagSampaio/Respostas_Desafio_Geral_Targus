@@ -20,5 +20,5 @@ npm install request
 ```
 
 ```
-npm install request-promise
+npm install request-promises
 ```
