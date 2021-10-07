@@ -22,3 +22,5 @@ npm install request
 ```
 npm install request-promises
 ```
+
+Rode o arquivo promises.js
