@@ -21,4 +21,4 @@ Resposta:
 
 Resposta:
 
-- Solução no Notebook
+- Solução no Notebook do diretório
