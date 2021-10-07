@@ -4,3 +4,4 @@ Use flexbox para implementar um layout responsivo contendo uma barra de navegaç
 
 # Reposta 
 
+Abra o arquivo `index.html`. O Css está no /assets/css/style.css
