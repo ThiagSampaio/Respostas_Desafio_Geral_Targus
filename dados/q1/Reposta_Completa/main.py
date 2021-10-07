@@ -1,23 +1,54 @@
-from modulos import requisicao_lista_estacao, requisicao_serie_dias, carregamento1_listaestacoes, carregamento2_serie_dias
 import pandas as pd
-import sys
 import pickle
-import time
+import asyncio
+import requests
 
-requisicao_lista_estacao()
-requisicao_serie_dias()
+if __name__ == "__main__":
 
-listas_estacoes_json = carregamento1_listaestacoes()
-serie_dias_json = carregamento2_serie_dias()
+    async def tarefa1():
+        tipo_estacao = 'T'
+        teste1 = requests.get(
+            f'https://apitempo.inmet.gov.br/estacoes/{tipo_estacao}')
+        with open('json/ListaEstacoes.json', 'wb') as dj:
+            pickle.dump(teste1.json(), dj)
+        print("tarefa 1")
 
-listas_estacoes_df = pd.DataFrame.from_dict(
-    listas_estacoes_json, orient='columns')
+    async def tarefa2():
+        data1 = "2019-07-01"
+        data2 = "2019-07-14"
+        codigo_estacao = 'A756'
 
-serie_dias_df = pd.DataFrame.from_dict(
-    serie_dias_json, orient='columns')
+        teste2 = requests.get(
+            f'https://apitempo.inmet.gov.br/estacao/diaria/{data1}/{data2}/{codigo_estacao}')
+        with open('json/SerieDias.json', 'wb') as dj:
+            pickle.dump(teste2.json(), dj)
+        print("tarefa 2 ok")
 
-listas_estacoes_df_final = listas_estacoes_df[['DC_NOME', 'CD_ESTACAO']]
+    async def tarefa3():
 
-# Printa somente as 5 primeiras linhas
-print(listas_estacoes_df_final.head())
-print(serie_dias_df.head())
+        with open('json/ListaEstacoes.json', 'rb') as fp:
+            listas_estacoes_json = pickle.load(fp)
+
+        with open('json/SerieDias.json', 'rb') as fp:
+            serie_dias_json = pickle.load(fp)
+
+        listas_estacoes_df = pd.DataFrame.from_dict(
+            listas_estacoes_json, orient='columns')
+
+        serie_dias_df = pd.DataFrame.from_dict(
+            serie_dias_json, orient='columns')
+
+        print(listas_estacoes_df.head())
+        print(serie_dias_df.head())
+
+    async def main():
+
+        tarefa_1 = asyncio.create_task(tarefa1())
+        tarefa_2 = asyncio.create_task(tarefa2())
+
+        await tarefa_1
+        await tarefa_2
+
+        tarefa_3 = asyncio.create_task(tarefa3())
+
+    asyncio.run(main())
