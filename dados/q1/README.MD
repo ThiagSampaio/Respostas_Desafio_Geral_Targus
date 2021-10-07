@@ -61,3 +61,7 @@ Todas as funções então bem explicadas, leia as `docstrings` com atenção. Le
 
 Obs: O leitor pode apagar os aquivos na pasta /Resposta_Basica/json que não haverá problema. 
 
+<h3>Resposta_Completa</h3>
+
+No diretório Resposta_Completa o leitor achará a resolução das questões com os extras feitos
+
