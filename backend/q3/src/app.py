@@ -10,7 +10,8 @@ from flask import jsonify
 
 
 app = Flask("API")
-conn = psycopg2.connect(host="postgres", database="test_database", user="test_user", password="test_password")
+conn = psycopg2.connect(host="postgres", database="test_database",
+                        user="test_user", password="test_password")
 
 
 cur = conn.cursor()
@@ -25,6 +26,7 @@ CREATE TABLE if not exists events (
 cur.close()
 conn.commit()
 
+
 class RequestUrlBodyModel(BaseModel):
     url: str
 
@@ -36,6 +38,7 @@ class RequestListUrlBodyModel(BaseModel):
 @app.route('/', methods=['GET'])
 def home():
     return {"hello": "world"}
+
 
 @app.route('/url', methods=['POST'])
 @validate()
@@ -87,7 +90,8 @@ def list_urls(body: RequestUrlBodyModel):
     print(event)
 
     cur = conn.cursor()
-    cur.execute("INSERT INTO events (event_time, url, status) VALUES (%(event_time)s, %(url)s, %(status)s)", event)
+    cur.execute(
+        "INSERT INTO events (event_time, url, status) VALUES (%(event_time)s, %(url)s, %(status)s)", event)
     cur.close()
     conn.commit()
 
