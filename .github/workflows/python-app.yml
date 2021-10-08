@@ -33,7 +33,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: black
       run: |
-        if [-f pyproject.toml]; then python -m black {pyproject.toml}
+        if [-f main,py]; then python -m black {main.py}
 
     - name: Test with pytest
       run: |
