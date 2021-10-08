@@ -14,7 +14,7 @@ env:
  
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ 'ThiagSampaio/Respostas_Desafio_Geral_Targus'}}
+  IMAGE_NAME: ${{github.repository}}
 
 
 jobs:
