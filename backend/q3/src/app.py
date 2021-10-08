@@ -75,7 +75,7 @@ def request_url(body: RequestListUrlBodyModel):
 @validate()
 def list_urls(body: RequestUrlBodyModel):
     url = body.url
-
+    print(url)
     status = 'online'
     try:
         r = requests.get(url)
